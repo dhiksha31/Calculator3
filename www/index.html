@@ -1,0 +1,196 @@
+<!doctype html>
+<html >
+<head>
+	<title>Welcome Page </title>
+	<!--Viewport meta tag-->
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <!--JQuery mobile stylesheet-->
+     <link rel="stylesheet" href="jquery.mobile-1.4.5.css">
+     <!--JQuery library-->
+     <script src="jquery.js"></script>
+     <!--Jquery mobile Library-->
+     <script src="jquery.mobile-1.4.5.js"></script>
+
+</head>
+<body>
+	<div data-role="page" id="pagehome" data-theme="a">
+        
+		<div data-role="header">
+			 <h1> Simple Calculator</h1>
+			<!--Navbar-->
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#pagehome" data-icon="home" >Home</a></li>
+                    <li><a href="#pagecal" data-icon="grid" >Calculator</a></li>
+                    <li><a href="#pagehelp" data-icon="info">Help</a></li>
+                 </ul>
+			</div>	
+			
+		</div><!-- end of  header-->
+
+    <!--Content of page-->
+	   <div role="main" class="ui-content">
+	   	  <p>This is a JQuery mobile exercise which provides the user with a calculator for basic mathematical operations</p>
+	   	    
+		</div>	
+	<!--footer-->
+		<div data-role="footer">
+			<h2> Homework</h2>
+		</div><!-- end of  pagehome-->
+
+	</div>
+	<!--Pagecal-->	
+<div data-role="page" id="pagecal" data-theme="a">
+        
+		<div data-role="header">
+			 <h1> Simple Calculator</h1>
+			<!--Navbar-->
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#pagehome" data-icon="home" >Home</a></li>
+                    <li><a href="#pagecal" data-icon="grid" >Calculator</a></li>
+                    <li><a href="#pagehelp" data-icon="info">Help</a></li>
+                 </ul>
+			</div>	
+			
+		</div><!-- end of  header-->
+
+    <!--Content of page-->
+	   <div role="main" class="ui-content">
+         <!--textbox for first number-->
+	   	 <input type="number" name="fnum" id="fnum" data-clear-btn="true">
+
+          <!--dropdownlist-->
+         <fieldset class="ui-field-contain">
+         
+           <select name="operation" id="operation"> 
+           	<option value="plus">+</option> 
+           	<option value="minus">-</option>
+           	 <option value="multiply">*</option>
+           	 <option value="divide">/</option>
+           	  </select> 
+           	</fieldset> 
+
+
+        
+	   	 <!--textbox for second number-->
+	   	  <input type="number" name="snum" id="snum" data-clear-btn="true"> 
+         	 <!--button Calculate-->
+       <input type="button" id="btn_cal" value="Calculate"></input>
+
+         <input  id="answer" > </input>
+
+         <!-- <a  href ="#pageresult" class="ui-btn" id="btn_cal"> calculate</a>-->
+       
+		</div>	
+	<!--footer-->
+		<div data-role="footer">
+			<h2> Homework</h2>
+		</div>
+		<!-- end of pagecal-->
+</div>
+<!--pagehelp-->
+<div data-role="page" id="pagehelp" >
+        
+		<div data-role="header">
+			 <h1> Simple Calculator</h1>
+			<!--Navbar-->
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#pagehome" data-icon="home" >Home</a></li>
+                    <li><a href="#pagecal" data-icon="grid" >Calculator</a></li>
+                    <li><a href="#pagehelp" data-icon="info">Help</a></li>
+                 </ul>
+			</div>	
+			
+		</div><!-- end of  header-->
+
+    <!--Content of page-->
+	   <div role="main" class="ui-content">
+	   	  <p>This is the help section and provides basic information how to use the calculator</p>
+	   	  <a href="#pageinfo"  class="ui-btn ui-icon-info ui-btn-icon-left"> More info</a>
+		</div>	
+	<!--footer-->
+		<div data-role="footer">
+			<h2> Homework</h2>
+		</div><!-- end of  pagehelp-->
+</div>
+
+<!--pageresult-->
+<div data-role="page" id="pageresult" >
+        
+		<div data-role="header">
+			 <h1> Simple Calculator</h1>
+			<!--Navbar-->
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#pagehome" data-icon="home" >Home</a></li>
+                    <li><a href="#pagecal" data-icon="grid" >Calculator</a></li>
+                    <li><a href="#pagehelp" data-icon="info">Help</a></li>
+                 </ul>
+			</div>	
+			
+		</div><!-- end of  header-->
+
+    <!--Content of page-->
+	   <div role="main" class="ui-content">
+
+	     <input id="num1" > </input>
+
+	     <input id="num2" > </input>
+	     <input  id="ans" > </input>
+
+
+	   	   <a href="#pagecal" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Back</a>
+		</div>	
+	<!--footer-->
+		<div data-role="footer">
+			<h2> Homework</h2>
+		</div><!-- end of  pageresult-->
+</div>
+
+<!--pageinfo-->
+<div data-role="page" data-dialog="true" id="pageinfo" >
+        
+		<div data-role="header">
+			 <h1> Simple Calculator</h1>
+			
+		</div><!-- end of  header-->
+
+    <!--Content of page-->
+	   <div role="main" class="ui-content">
+	   	  <p>you have requested more information about the App!</p>
+	   	    
+	   	   <a href="#pagecal" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Dismiss</a>
+		</div>	
+	</div>
+	<!-- end of  pageinfo-->
+
+</body>
+     <script>
+     	
+
+
+   $(document).ready(function(){
+  $("#btn_cal").click(function(){
+      
+   //alert("Operation: " + $("#fnum").val() + "+" + $("#snum").val());
+  
+
+			var opr = $("#opr").val();
+	
+
+    if (opr == "+"){
+			var a = $("#fnum").val();
+			var b = $("#snum").val();
+				
+				var r = parseInt(a) + parseInt(b);
+				alert("Operation: " + a + "+" + b);
+				//$("#answer").val(r);
+				alert(r);
+			}
+  });
+});
+
+     </script>	
+</html>
